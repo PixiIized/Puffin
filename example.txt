@@ -1,0 +1,40 @@
+.Example Puffin program
+
+...
+I guess
+this is farming
+...
+
+let int potatoes :: 15; .Mutable variable
+fix int price :: 5; .Constant variable
+
+let string offer :: 'Buy my potatoes! Now!'; .A string
+
+let list crops :: ['Potatoes', 'Carrots', 'Wheat']; .A list
+fix matrix cropsAndPrices :: [['Potatoes', 'Carrots', 'Wheat'],[price, 2, 10]]; .A matrix
+
+let list referencesCrops :: {crops};
+let list referencesItemOneOfCrops :: {crops[1]};
+
+def buy({item}): .The parameter itself is a reference- now the function will update the original variable instead of creating a copy
+    item :: item + 1;
+end;
+
+.potatoes is 15. if you do buy(potatoes), potatoes is now 16
+
+def buyAgain(item) .This one will just make a copy
+    item :: item + 1;
+end;
+
+.potatoes is 16. if you do buyAgain(potatoes), potatoes is still 16, cause the function made a copy
+
+def dailyPurchases():
+    if potatoes = 30:
+        output 'Too many potatoes!';
+    else:
+        buy(potatoes);
+    end;
+end;
+
+.Ternary here
+output potatoes=-100?'uh, how'??'yup, normal'; .this will output 'yup, normal'
