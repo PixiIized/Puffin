@@ -30,11 +30,11 @@ end;
 
 def dailyPurchases():
     if potatoes = 30:
-        output 'Too many potatoes!';
+        output('Too many potatoes!');
     else:
         buy(potatoes);
     end;
 end;
 
 .Ternary here
-output potatoes=-100?'uh, how'??'yup, normal'; .this will output 'yup, normal'
+output (potatoes=-100?'uh, how'??'yup, normal'; .this will output 'yup, normal')
