@@ -1,40 +1,94 @@
 .Example Puffin program
 
 ...
-I guess
-this is farming
+Hey!
+This will showcase all the features
 ...
 
-let int potatoes :: 15; .Mutable variable
-fix int price :: 5; .Constant variable
+.Variables
+let int date :: 20;
+fix str greeting :: 'Good morning!';
+let str day :: 'Monday';
+fix flo pay :: 12.5;
 
-let string offer :: 'Buy my potatoes! Now!'; .A string
+.Arrays and matrices
+let arr fridge :: ['carrots', 'ketchup', 'steak'];
+fix mtx dresser :: [['red shirt', 'hoodie', 'hat'],['jeans', 'khakis', 'socks']];
 
-let list crops :: ['Potatoes', 'Carrots', 'Wheat']; .A list
-fix matrix cropsAndPrices :: [['Potatoes', 'Carrots', 'Wheat'],[price, 2, 10]]; .A matrix
-
-let list referencesCrops :: {crops};
-let list referencesItemOneOfCrops :: {crops[1]};
-
-def buy({item}): .The parameter itself is a reference- now the function will update the original variable instead of creating a copy
-    item :: item + 1;
+.Objects
+new obj Man:
+    str name :: 'Jack';
+    int age :: 35;
+    flo height :: 6.2;
 end;
 
-.potatoes is 15. if you do buy(potatoes), potatoes is now 16
+.Logging
+output(greeting);
 
-def buyAgain(item) .This one will just make a copy
-    item :: item + 1;
-end;
+.Ternary
+output(day = 'Monday' ? 'Today is terrible' ?? 'Alright');
 
-.potatoes is 16. if you do buyAgain(potatoes), potatoes is still 16, cause the function made a copy
+.References
+let int dateReference :: {date}; .If date updates, so will dateReference
 
-def dailyPurchases():
-    if potatoes = 30:
-        output('Too many potatoes!');
+let str {Man.name} :: 'happy' .This creates a new variable called Jack and assigns to it a value of 'happy'. The value of Man.name remains unchanged
+
+.Function and conditionals
+def routine(str day, int date):
+    if day = 'Monday':
+        output('sad');
+    elif day = 'Friday':
+        output('happy');
     else:
-        buy(potatoes);
+        output('meh');
     end;
+    date :: date + 1;
+    output(date);
 end;
 
-.Ternary here
-output (potatoes=-100?'uh, how'??'yup, normal'; .this will output 'yup, normal')
+.Calling user made function
+routine(day, date); .This will return 'sad' and '21'
+output(date); .This returns 20- wait, what? we just increased date by 1, but it doesn't seem to have updated
+routine(day, {date});
+output(date); .21! So only when we pass a reference as a parameter can it update outside variables- otherwise it just creates a copy local to the function
+
+.Loops
+fizzBuzz(int start, int finish):
+  for i, start, finish: .This iterates i from start to finish
+    if i % 3 = 0 and i % 5 = 0:
+      output('fizzbuzz');
+    elif i % 3 = 0:
+      output('fizz');
+    elif i % 5 = 0:
+      output('buzz');
+    else:
+      output(i);
+    end;
+  end;
+end;
+
+fizzBuzz(1, 20);
+...
+this will output:
+
+1
+2
+fizz
+4
+buzz
+fizz
+7
+8
+fizz
+buzz
+11
+fizz
+13
+14
+fizzbuzz
+16
+17
+fizz
+19
+buzz
+...

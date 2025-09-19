@@ -1,62 +1,70 @@
-<h1 align='center'>Puffin</h1>
+# About Puffin
+***Simple, playful, and vicious***
 
-<div align='center'>
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/PixiIized/Puffin">
-  <img alt="GitHub watchers" src="https://img.shields.io/github/watchers/PixiIized/Puffin"><br>
-  <img alt="GitHub Created At" src="https://img.shields.io/github/created-at/PixiIized/Puffin">
-  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/PixiIized/Puffin">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/PixiIized/Puffin">
-  <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/PixiIized/Puffin">
-  <img alt="GitHub License" src="https://img.shields.io/github/license/PixiIized/Puffin"><br>
-  <img src='https://skillicons.dev/icons?i=github,python'>
-</div>
+## What?
+Puffin is my own programming language, built from scratch. It's simple, consistent, concise, and somewhat logical. Puffin has almost no overloading, and everything is easy to get once you understand it. In the creation of Puffin, I made the decision to abandon almost all of the typical programming conventions, meaning Puffin is truly one of a kind.
 
-## About
-Puffin is a simple programming language that sprung forth from the creator's mind when she said<br>
-"Hold on a damn second. There's no language called Puffin."
+To program in Puffin, keep an eye on this repo. It's not currently usable, but I'm currently working on it.
 
-And so was spun a tale of stupidity and questionable syntax- all to bring forth to you, <b>Puffin</b>.<br>
+## Why?
+In truth, I'm only making Puffin because I can. To say I did. "I made a language, and you're using it. What do you think of that?"<br>
+Puffin doesn't fill a niche, it's not the best tool for any scenario, and it really serves no purpose. It's not an esolang, either. It's just here. And that's enough for me.
 
-## Features
-I offer to you:
+## When?
+Development on Puffin started in September of 2025. I was in math class, and I wondered if there was a language called Puffin. There wasn't, and I started designing the syntax, taking inspiration from JavaScript, Python, and my beloved AXE Basic, a modified version of TI-Basic for the TI-83+ and TI-84+ calculators. That very evening, I wrote the lexer, and Puffin was born.
 
-- **Readable Syntax** - I hate those clunky symbols
-- **References** - Not pointers I gotta make that clear
-- **Static Typing** - Screw you TypeScript, I can do it too
-- **List and Matrices** - Hold on, what bonehead put that in this list?? That's basic shi-
-- **Fantastically Bad Syntax** - Designed for optimal suffering
+## How?
+I'm currently using Python to make the interpreter for Puffin, but once it's in a stable state I'm going to upgrade to Rust. My final goal is to have the language be self-hosting, meaning the Puffin interpreter will run in Puffin itself. To figure out exactly how a language is made, I've read a lovely article by William W Wold, who made his own language called Pinecone. I'm also referring to the Pinecone source code to see exactly how these things function, and I couldn't have found a better resource.
 
-```
-.Example!!!
-let string hullo :: 'Hullo, world!';
-output(hullo);
+# Using Puffin
+***For fun, practicality, or torture***
+
+## What?
+In order to use Puffin, you'll need to write code in the Puffin interpreter, which I've named Puffin Rock because of a little show I used to watch when I was young.<br>
+As of right now, there is no Puffin interpreter, but that will change when Puffin is in a stable state.
+
+## Why?
+If you want to use Puffin, you surely have a reason. You could be using it just because you think it'd be fun to learn a new little language, you could be using it to support me, or you could be using it just because you're bored. Whatever the reason, I'm glad you chose Puffin!
+
+## When?
+I don't really know when Puffin will be available for public use, as I tend to take breaks from projects a lot. If you want to keep up with the progress, consider watching the repo!
+
+## How?
+Despite how incomplete it is, the syntax for Puffin is basically set in stone. Here's a simple "Hello, world!" program written in Puffin.
+```puffin
+.Hullo world
+output('Hullo, world!');
 ```
 `> Hullo, world!`
+Admittedly, that is quite simple. Here's the classic FizzBuzz program. It cycles through numbers 1 to 20, returning "fizz" if it's a multiple of 3, "buzz" if a multiple of 5, and "fizzbuzz" if both.
+```puffin
+.FizzBuzz
 
-And it's only ~~$599.99~~ completely free!!!
+.Calls the function
+fizzBuzz(1, 20);
 
-## How To Use
-Currently a Python prototype; stay tuned for the first usable interpreter!<br>
-I'll make a doc once it's usable.<br>
-If people like this dookie of a language I'll remake it in rust so we can spread the suffering.
+.Defines the function
+def fizzBuzz(int start, int finish):
+  for i, start, finish:
+    if i % 3 = 0 and i % 5 = 0:
+      output('fizzbuzz');
+    elif i % 3 = 0:
+      output('fizz');
+    elif i % 5 = 0:
+      output('buzz');
+    else:
+      output(i);
+    end;
+  end;
+end;
+```
+The syntax may seem a little weird, but remember: I'm focusing on simplicity while still keeping functionality. Veteran programmers may take some time to get used to it, but beginners should learn it pretty fast. If you want to see more of how Puffin looks, check the *example.txt* file.
 
-## FAQ
-> Why??
+# Final Words
+***You made it this far***
 
-Great question!
-
-> How??
-
-Python.<br>
-Help me I suffered!
-
-> What can I do?
-
-Oh crap you're actually interested?<br>
-Damn<br>
-Whatever your poor sweet innocent soul desires
+That's really all I have to say. You can see what Puffin is, why it is, how it is, and I hope that you'll keep up with this project and make wonderful creations.
 
 ## Contributing
-I'm not great at coding- you might be!
-Feel free to open issues or make pull requests.
-I'll credit you. Thanks for doing my work for me.
+One more thing:<br>
+I'm not great at programming. You might be! If you want to contribute to Puffin, I'm always open to suggestions, and don't be afraid to make a pull request! And don't worry- you'll be credited for anything you do.
