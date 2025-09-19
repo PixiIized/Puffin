@@ -8,10 +8,11 @@ class Lexer:
     
     def tokenize(self):
         chunks = re.findall(
-            r"\.\.\..*?\.\.\.|^\..*?$|-?\d+\.\d+|-?\d+|\w+|::|[{}\[\];,()]|'.*?'",
+            r"\.\.\..*?\.\.\.|^\..*?$|-?\d+\.\d+|-?\d+|>=|<=|!=|==|\?\?|::|[+\-*/%=<>?]|[{}\[\]();,:]|'.*?'|\w+",
             self.code,
             re.MULTILINE | re.DOTALL
         )
+
 
         for chunk in chunks:
             match chunk:
@@ -23,10 +24,40 @@ class Lexer:
                     self.tokens.append(Token("TYPE", chunk))
                 case "::":
                     self.tokens.append(Token("ASSIGNMENT_OPERATOR", chunk))
+                case ":":
+                    self.tokens.append(Token("COLON", chunk))
+                case ">=" | "<=" | "!=" | "=" | ">" | "<" | "+" | "-" | "*" | "/" | "%":
+                    self.tokens.append(Token("OPERATOR", chunk))
                 case ";":
                     self.tokens.append(Token("SEMICOLON", chunk))
+                case ",":
+                    self.tokens.append(Token("COMMA", chunk))
                 case "null":
                     self.tokens.append(Token("NULL", None))
+                case "(":
+                    self.tokens.append(Token("L_PAREN", chunk))
+                case ")":
+                    self.tokens.append(Token("R_PAREN", chunk))
+                case "[":
+                    self.tokens.append(Token("L_BRACKET", chunk))
+                case "]":
+                    self.tokens.append(Token("R_BRACKET", chunk))
+                case "{":
+                    self.tokens.append(Token("L_BRACE", chunk))
+                case "}":
+                    self.tokens.append(Token("R_BRACE", chunk))
+                case "if":
+                    self.tokens.append(Token("IF", chunk))
+                case "elif":
+                    self.tokens.append(Token("ELIF", chunk))
+                case "else":
+                    self.tokens.append(Token("ELSE", chunk))
+                case "end":
+                    self.tokens.append(Token("END", chunk))
+                case "??":
+                    self.tokens.append(Token("TERNARY_ELSE", chunk))
+                case "?":
+                    self.tokens.append(Token("TERNARY_IF", chunk))
                 case _ if re.match(r"^-?\d+\.\d+$", chunk):
                     self.tokens.append(Token("FLOAT", float(chunk)))
                 case _ if re.match(r"^-?\d+$", chunk):
