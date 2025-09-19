@@ -1,4 +1,5 @@
 <h1 align='center'>Puffin</h1>
+<h3 align='center'><i><b>Simple, playful, and vicious</b></i></h3>
 
 <div align='center'>
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/PixiIized/Puffin">
@@ -12,51 +13,58 @@
 </div>
 
 ## About
-Puffin is a simple programming language that sprung forth from the creator's mind when she said<br>
-"Hold on a damn second. There's no language called Puffin."
+Puffin is my own programming language made using Python (for now). It's simple, consistent, and somewhat logical. I did, however, decide to ignore all known conventions for existing programming languages. This thing is one of a kind. Puffin is currently in development, but new features are being added whenever I feel like it. This language is written completely from scratch with no outside tools, which may explain a bit of the jankiness. This readme, however, is blatantly plagiarized from another custom language someone else made, called Pinecone.
 
-And so was spun a tale of stupidity and questionable syntax- all to bring forth to you, <b>Puffin</b>.<br>
+If you want to program using Puffin, then I'm quite sorry, but it's not yet usable.
+
+Tutorials will be available upon the first usable release of the language.
+
+## Example
+While you can't code with it, the syntax is basically already set in stone.
+
+Here's a simple "hello world" program in Puffin.
+```
+.Hullo World
+output('Hullo, world!');
+```
+This will return `Hullo, world!`.
+
+Here's the usual fizzbuzz script written in Puffin. It cycles through numbers 1 to 20, returning "fizz" if it's a multiple of 3, "buzz" if a multiple of 5, and "fizzbuzz" if both.
+```
+.fizzbuzz
+
+.call the function
+fuzzBuzz(1, 20);
+
+.the function
+fizzBuzz(start, end):
+  for i, start, end:
+    if i % 3 = 0 and i % 5 = 0:
+      output('fizzbuzz');
+    elif i % 3 = 0:
+      output('fizz');
+    elif i % 5 = 0:
+      output('buzz');
+    else:
+      output(i);
+    end;
+  end;
+end;
+```
+
+## Wait, but why?
+Short answer?
+Cause I could.
+
+Longer answer?
+Cause I though Puffin would make a good language name, and didn't want someone to take it.
+
+Longest answer?
+I wanted to make my own programming language so I could get a better feel for how they operate, why things do what they do, how I could iterate and improve.
+Puffin doesn't fill any niche, and the syntax is questionable at best- it's really just here.
 
 ## Features
-I offer to you:
-
-- **Readable Syntax** - I hate those clunky symbols
-- **References** - Not pointers I gotta make that clear
-- **Static Typing** - Screw you TypeScript, I can do it too
-- **List and Matrices** - Hold on, what bonehead put that in this list?? That's basic shi-
-- **Fantastically Bad Syntax** - Designed for optimal suffering
-
-```
-.Example!!!
-let string hullo :: 'Hullo, world!';
-output(hullo);
-```
-`> Hullo, world!`
-
-And it's only ~~$599.99~~ completely free!!!
-
-## How To Use
-Currently a Python prototype; stay tuned for the first usable interpreter!<br>
-I'll make a doc once it's usable.<br>
-If people like this dookie of a language I'll remake it in rust so we can spread the suffering.
-
-## FAQ
-> Why??
-
-Great question!
-
-> How??
-
-Python.<br>
-Help me I suffered!
-
-> What can I do?
-
-Oh crap you're actually interested?<br>
-Damn<br>
-Whatever your poor sweet innocent soul desires
+Currently, all I have working is the lexer. Check back another time!
 
 ## Contributing
-I'm not great at coding- you might be!
-Feel free to open issues or make pull requests.
-I'll credit you. Thanks for doing my work for me.
+I'm not great at coding- you might be! Create all the issues you want, and feel free to make any pull requests. I always love improvements. And don't worry- you'll receive credit.
