@@ -29,7 +29,7 @@ I offer to you:
 ```
 .Example!!!
 let string hullo :: 'Hullo, world!';
-output hullo;
+output(hullo);
 ```
 `> Hullo, world!`
 
