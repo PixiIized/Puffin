@@ -37,6 +37,7 @@ And it's only ~~$599.99~~ completely free!!!
 
 ## How To Use
 Currently a Python prototype; stay tuned for the first usable interpreter!<br>
+I'll make a doc once it's usable.<br>
 If people like this dookie of a language I'll remake it in rust so we can spread the suffering.
 
 ## FAQ
