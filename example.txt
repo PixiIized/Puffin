@@ -29,9 +29,9 @@ output(greeting);
 output(day = 'Monday' ? 'Today is terrible' ?? 'Alright');
 
 .References
-let int dateReference :: {date}; .If date updates, so will dateReference
+let int dateReference :: $date; .If date updates, so will dateReference
 
-let str {Man.name} :: 'happy' .This creates a new variable called Jack and assigns to it a value of 'happy'. The value of Man.name remains unchanged
+let str $Man.name :: 'happy' .This creates a new variable called Jack and assigns to it a value of 'happy'. The value of Man.name remains unchanged
 
 .Function and conditionals
 def routine(str day, int date):
@@ -49,7 +49,7 @@ end;
 .Calling user made function
 routine(day, date); .This will return 'sad' and '21'
 output(date); .This returns 20- wait, what? we just increased date by 1, but it doesn't seem to have updated
-routine(day, {date});
+routine(day, $date);
 output(date); .21! So only when we pass a reference as a parameter can it update outside variables- otherwise it just creates a copy local to the function
 
 .Loops
