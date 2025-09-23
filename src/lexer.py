@@ -8,7 +8,10 @@ class Lexer:
         self.index = 0
     
     def current(self):
-        return self.code[self.index]
+        if self.index < len(self.code):
+            return self.code[self.index]
+        else:
+            return None
 
     def advance(self):
         self.index += 1
@@ -18,25 +21,6 @@ class Lexer:
             self.advance()
         else:
             self.col += 1
-    
-    # End is the character on which the token ends
-    # Eat is a boolean stating wether the last character is eaten or included
-    # Special is a boolean stating wether seperately tokenize seperate characters, like ( or $
-    def make_token(self, end, eat, special):
-        self.advance()
-        char = self.current()
-        token = ''
-
-        while char != end:
-            if eat:
-                special
-            else:
-                token += char
-                self.advance()
-        if eat:
-            return token
-        else:
-            return token + char
     
     def tokenize(self):
         tokens = []
@@ -52,3 +36,28 @@ class Lexer:
 
         if char in ("'", '"'):
             return self.make_token(char, False, False)
+        if char == ' ':
+            return self.make_token(char, True, True)
+
+    # End is the character on which the token ends
+    # Eat is a boolean stating wether the last and first characters are eaten or included
+    # Special is a boolean stating wether seperately tokenize seperate characters, like ( or $
+    def make_token(self, end, eat, special):
+        if eat:
+            self.advance()
+        token = self.current()
+        self.advance()
+        char = self.current()
+
+        while not char is None and char != end:
+            token += char
+            self.advance()
+            char = self.current()
+
+        if char == end:
+            if not eat:
+                token += char
+            self.advance()
+
+        print(token)
+        return token
